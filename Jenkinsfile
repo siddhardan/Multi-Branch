@@ -2,9 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('SCM checkout') {
             steps {
-                echo 'Hello World'
+                echo 'Checkout code from GitHub'
+            }
+        }
+        stage('Maven Build') {
+            steps {
+                echo 'Compile and Package the source code'
             }
         }
     }
